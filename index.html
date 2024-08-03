@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Haven - Art Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Art Haven</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Art Haven</h2>
+        <p>Discover and purchase exquisite artworks by talented artist.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="artwork1.jpg" alt="Artwork 1">
+                <h3>Artwork 1</h3>
+                <p>R10 000</p>
+                <button onclick="addToCart('Artwork 1', 120.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="artwork2.jpg" alt="Artwork 2">
+                <h3>Artwork 2</h3>
+                <p>R5000</p>
+                <button onclick="addToCart('Artwork 2', 150.00)">Add to Cart</button>
+            </div>
+            <!-- Add more artworks as needed -->
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button onclick="showCheckout()">Checkout</button>
+    </section>
+
+    <section id="signup">
+        <h2>Sign Up for Updates</h2>
+        <div id="signup-container">
+            <p>Be the first to know about our latest artworks and special offers. Enter your email below to stay updated!</p>
+            <form id="signup-form">
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" placeholder="Your email address" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label for="checkout-name">Name:</label>
+                <input type="text" id="checkout-name" name="checkout-name" required>
+                <label for="checkout-email">Email:</label>
+                <input type="email" id="checkout-email" name="checkout-email" required>
+                <label for="checkout-address">Address:</label>
+                <textarea id="checkout-address" name="checkout-address" required></textarea>
+                <label for="checkout-card">Card Number:</label>
+                <input type="text" id="checkout-card" name="checkout-card" required>
+                <label for="checkout-expiry">Expiry Date:</label>
+                <input type="text" id="checkout-expiry" name="checkout-expiry" required>
+                <label for="checkout-cvc">CVC:</label>
+                <input type="text" id="checkout-cvc" name="checkout-cvc" required>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Art Haven. All rights reserved.</p>
+    </footer>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">Top</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
