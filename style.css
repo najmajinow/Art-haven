@@ -9,7 +9,7 @@ body {
 header {
     background-color: #2e2e2e;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -27,7 +27,7 @@ nav {
 }
 
 nav h1 {
-    font-size: 28px;
+    font-size: 24px;
     margin: 0;
     font-family: 'Playfair Display', serif;
     color: #ff5722; /* Accent color */
@@ -47,11 +47,12 @@ nav ul li {
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 section {
-    padding: 80px 20px 20px;
+    padding: 60px 20px 20px;
+    margin-top: 60px;
 }
 
 #home {
@@ -87,13 +88,12 @@ section {
     text-align: center;
     width: calc(33.333% - 20px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .product img {
     max-width: 100%;
     border-radius: 8px;
-    transition: transform 0.3s ease;
 }
 
 .product h3 {
@@ -112,16 +112,17 @@ section {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    font-size: 16px;
 }
 
 .product button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.product:hover img {
-    transform: scale(1.1);
 }
 
 #cart {
@@ -207,8 +208,9 @@ section {
 
 .modal {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
