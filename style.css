@@ -1,37 +1,27 @@
-/* Header Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
 header {
-    background-color: #ffffff; /* White header for a clean appearance */
-    color: #333333; /* Dark gray text for better contrast */
+    background-color: #2e2e2e;
+    color: #ffffff;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #cccccc; /* Light gray border for definition */
-    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
+    border-bottom: 1px solid #333;
 }
 
-/* Hide the header when scrolling down */
+/* Existing styles... */
+
 header.hidden {
-    transform: translateY(-100%);
-}/* Global Styles */
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* Light gray background for a clean look */
-    color: #333333; /* Dark gray text color for readability */
-    line-height: 1.6;
-}
-
-/* Header Styles */
-header {
-    background-color: #ffffff; /* White header for a clean appearance */
-    color: #333333; /* Dark gray text for better contrast */
-    padding: 10px 0;
-    position: static; /* Remove fixed positioning */
-    width: 100%;
-    border-bottom: 1px solid #cccccc; /* Light gray border for definition */
+    top: -60px; /* Adjust based on the header height */
+    transition: top 0.3s;
 }
 
 nav {
@@ -44,9 +34,10 @@ nav {
 }
 
 nav h1 {
-    font-size: 28px;
+    font-size: 24px;
     margin: 0;
     font-family: 'Playfair Display', serif;
+    color: #ff5722; /* Accent color */
 }
 
 nav ul {
@@ -61,287 +52,272 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333333; /* Dark gray text for links */
+    color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-size: 14px;
 }
 
-nav ul li a:hover {
-    color: #000000; /* Black text for hover effect */
-}
-
-/* Section Styles */
 section {
-    padding: 100px 20px;
-    text-align: center;
+    padding: 60px 20px 20px;
+    margin-top: 60px;
 }
 
-
-
-/* Menu Section */
-#menu {
-    background-color: #ffffff; /* White background for a clean look */
-}
-
-#menu h2, #about h2, #contact h2 {
- /* Home Section Styles */
 #home {
-    background: url('restaurant.jpg') no-repeat center center/cover;
-    color: #ffffff; /* White text for high contrast */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Ensure the overlay is correctly positioned */
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px auto;
 }
 
-/* Add a semi-transparent overlay for better text visibility */
-#home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
-    z-index: -1; /* Place the overlay behind the text */
-}
-
-/* Home Heading Styles */
 #home h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-    color: #f2b5d4; /* Pastel pink for a pleasant accent */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a shadow for better readability */
+    color: #ff5722; /* Accent color */
 }
 
-/* Home Paragraph Styles */
-#home p {
-    font-size: 24px;
+#gallery {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    color: #ff5722; /* Accent color */
+}
+
+.product p {
+    color: #333;
+}
+
+.product button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    font-size: 16px;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+#cart {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+#cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+#cart ul li {
+    margin: 10px 0;
+}
+
+#cart p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#signup {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+#signup h2 {
+    color: #ff5722; /* Accent color */
+}
+
+#signup-container {
     max-width: 600px;
     margin: 0 auto;
-    color: #ffffff; /* White text for better contrast */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Add a shadow for better readability */
-}
-   font-size: 36px;
-    margin-bottom: 40px;
-    font-family: 'Playfair Display', serif;
-    color: #555555; /* Medium gray for headings */
-}
-
-#menu .menu-item {
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    padding: 20px;
-    border: 1px solid #cccccc; /* Light gray border for definition */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff; /* White background for menu items */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
-#menu .menu-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-#menu .menu-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-#menu h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    color: #333333; /* Dark gray for item titles */
-}
-
-#menu p {
+#signup-container p {
     font-size: 18px;
-    color: #666666; /* Medium gray for item descriptions */
+    color: #333;
 }
 
-/* About Section */
-#about {
-    background-color: #f0f0f0; /* Light gray background for consistency */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-    color: #333333; /* Dark gray text for readability */
+#signup-form label {
+    margin: 10px 0 5px;
+    color: #333;
 }
 
-/* Contact Section */
-#contact {
-    background-color: #ffffff; /* White background for a clean look */
-}
-
-/* Form Styles */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #333333; /* Dark gray for form labels */
-}
-
-form input,
-form textarea {
+#signup-form input {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #cccccc; /* Light gray border for form fields */
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #ffffff; /* White background for form fields */
+    max-width: 400px;
 }
 
-form button {
-    padding: 15px 30px;
-    background-color: #333333; /* Dark gray button background */
-    color: #ffffff; /* White text for button */
+#signup-form button {
+    background-color: #28a745;
+    color: #ffffff;
     border: none;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
-form button:hover {
-    background-color: #000000; /* Black button background on hover */
+#signup-form button:hover {
+    background-color: #218838;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #ffffff; /* White footer for a clean look */
-    color: #333333; /* Dark gray text for consistency */
-    text-align: center;
-    padding: 20px 0;
-    position: static; /* Remove fixed positioning */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
-    border-top: 1px solid #cccccc; /* Light gray border for definition */
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-footer p {
-    margin: 0;
-    font-size: 16px;
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
 }
 
-/* Scroll to Top Button Styles */
+.modal-content h2 {
+    color: #ff5722; /* Accent color */
+}
+
+.close {
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff5722; /* Accent color */
+}
+
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkout-form label {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#checkout-form button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-form button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
 .scroll-to-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333333; /* Dark gray background for button */
-    color: #ffffff; /* White text for button */
+    background-color: #007bff;
+    color: #ffffff;
     border: none;
     border-radius: 50%;
-    padding: 15px 20px;
-    font-size: 18px;
+    padding: 15px;
     cursor: pointer;
-    display: none; /* Hidden by default */
+    font-size: 18px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .scroll-to-top:hover {
-    background-color: #000000; /* Black button background on hover */
-    transform: scale(1.1);
+    background-color: #0056b3;
 }
 
-.scroll-to-top:focus {
-    outline: none;
-}
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 0;
-    }
-
-    nav {
-        flex-direction: column;
-    }
-
-    nav h1 {
-        font-size: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 80px 10px;
-    }
-
-    #home h2 {
-        font-size: 36px;
-    }
-
-    #home p {
-        font-size: 18px;
-    }
-
-    #menu h2, #about h2, #contact h2 {
-        font-size: 28px;
-    }
-
-    #menu h3 {
-        font-size: 24px;
-    }
-
-    #menu p {
-        font-size: 16px;
-    }
-
-    form {
-        padding: 0 10px;
-    }
-
-    form input, form textarea {
-        padding: 10px;
-    }
-
-    form button {
+    .product {
         width: 100%;
-        padding: 10px;
-    }
-
-    footer {
-        padding: 10px 0;
-    }
-
-    .scroll-to-top {
-        padding: 10px 15px;
-        font-size: 16px;
     }
 }
-
-
